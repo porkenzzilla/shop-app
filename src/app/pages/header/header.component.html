@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <nav>
+    <input type="checkbox" id="burger">
+    <label for="burger" class="burger"></label>
+    <ul class="navbar">
+      <li><a routerLink="/" style="padding: 6px">Products</a></li>
+      <li class="cart"><a routerLink="/cart">Cart
+        <app-icon-material></app-icon-material>
+        {{totalItem}}</a></li>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,47 @@
+<ng-container *ngIf="productsSelected?.length !== 0">
+  <div class="container">
+<table>
+  <thead>
+  <tr>
+    <th colspan="2" class="fruit-name">Name</th>
+    <th>Price per 1</th>
+    <th>Amount Selected</th>
+    <th>Total Price</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of productsSelected">
+    <td><img src="{{product.image}}" alt="{{product.name}}" style="height: 30px"></td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>
+      <button class="button-add" (click)="decrement(product); addFruitToCart(product)">-</button>
+      <input class="input-amount" value="{{product.amountSelectedDefault}}" (input)="inputChange($event, product)">
+      <button class="button-add" (click)="increment(product); addFruitToCart(product)">+</button>
+    </td>
+    <td>{{product.total! | number: '1.0-2'}}</td>
+    <button (click)="removeFruit(product); getTotalPrice()" class="btn-remove-one">
+      <mat-icon style="width: 40px; height: 40px" svgIcon="trash" aria-hidden="false" aria-label="trash SVG icon"></mat-icon>
+    </button>
+  </tr>
+  </tbody>
+</table>
+    <button type="button" (click)="removeAllFruit()" class="btn-remove-all-fruits">Remove All</button>
+    <p class="total-price">Total price: {{ totalPrice | number: '1.0-2' }}$</p>
+    <button type="button" class="btn-buy" (click)="buyNow()">Buy now!</button>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="productsSelected?.length === 0">
+<div class="container">
+  <div class="cart-container">
+    <div class="cart">
+    <h2>My cart</h2>
+    <img src="../../../assets/images/shopping-cart-with-fruit.jpeg" style="height: 200px">
+    <h3 style="font-size: 20px">Your cart is empty</h3>
+    <h4>Add item to it now</h4>
+    <button routerLink="/">Shop Now</button>
+  </div>
+  </div>
+</div>
+</ng-container>

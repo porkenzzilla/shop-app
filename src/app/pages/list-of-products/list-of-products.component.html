@@ -1,0 +1,14 @@
+<h1>Fresh Fruit</h1>
+<div class="container">
+  <div class="container-product" *ngFor="let fruit of productList">
+    <img src="{{fruit.image}}" alt="{{fruit.name}}" style="height: 150px">
+    <h2>{{ fruit.name }}</h2>
+    <div class="product-buttons">
+    <p><span class="fruit-price">${{fruit.price}}</span> per kg</p>
+    <button class="button-add" (click)="decrement(fruit)">-</button>
+      <input class="input-amount" value="{{fruit.amountSelectedDefault}}" (input)="inputChange($event, fruit)">
+    <button class="button-add" (click)="increment(fruit)">+</button>
+    </div>
+    <button class="basked" (click)="addFruitToCart(fruit)">Add to cart</button>
+  </div>
+</div>

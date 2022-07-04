@@ -1,0 +1,148 @@
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.cart-container{
+  border: 1px solid lightgray;
+  align-self: center;
+  justify-self: center;
+  width: 750px;
+  height: 400px;
+  background-color: #ffffff;
+  .cart {
+    display: flex;
+    flex-direction: column;
+    h3, h4, button {
+      align-self: center;
+      justify-self: center;
+    }
+    img{
+      align-self: center;
+      justify-self: center;
+      margin-left: 80px;
+    }
+  }
+}
+table {
+  margin: auto;
+  width: 80%;
+  border-spacing: 0 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  .fruit-name{
+   text-align: center;
+  }
+}
+th {
+  padding: 10px 20px;
+  background: darkred;
+  color: white;
+  border-right: 2px solid;
+  font-size: 20px;
+}
+th:first-child {
+  text-align: left;
+}
+th:last-child {
+  border-right: none;
+}
+td {
+  vertical-align: middle;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  border-top: 2px solid #56433D;
+  border-bottom: 2px solid #56433D;
+  border-right: 2px solid #56433D;
+}
+td:first-child {
+  border-left: 2px solid #56433D;
+  border-right: none;
+}
+td:nth-child(2){
+  text-align: left;
+}
+
+.btn-remove-one{
+  margin-left: 4px;
+  margin-top: 7px;
+  background-color: white;
+  border-radius: 20px;
+  border: 0;
+}
+
+.btn-remove-all-fruits{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  color: black;
+  font-size: 15px;
+  height: 25px;
+  width: 100px;
+  border-radius: 30px;
+}
+
+.total-price{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin-top: 100px;
+  font-size: 15px;
+  color: black;
+}
+
+.btn-buy{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  background-color: darkred;
+  color: white;
+  border-radius: 30px;
+  height: 30px;
+  width: 120px;
+  font-size: 20px;
+}
+
+.button-add {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  font-weight: bold;
+  background-color: darkred;
+  color: white;
+  border-radius: 30px;
+  font-size: 15px;
+  height: 30px;
+  width: 30px;
+}
+
+.input-amount{
+  padding: 0;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .cart-container{
+    width: 80%;
+    height: 30%;
+    }
+}
+
+@media screen and (max-width: 460px) {
+  img{
+    height: 150px !important;
+  }
+  h3 {
+    font-size: 15px !important;
+  }
+  h4 {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  img{
+    height: 120px !important;
+  }
+}

@@ -1,0 +1,82 @@
+.wrapper {
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  margin-bottom: 20px;
+  background-color: rgba($color: darkred, $alpha: 0.5);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding-top: 0;
+  list-style-type: none;
+  height: 35px;
+  padding-left: 0;
+  min-width: 470px;
+
+    a {
+      display: block;
+      padding: 0;
+      width: 120px;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+      vertical-align: center;
+    }
+}
+
+li:hover {
+  background-color: rgba($color: darkred, $alpha: 1.0)
+}
+
+.admin-mode {
+  font-size: small;
+}
+
+#burger, [for=burger] {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    background-color: transparent;
+  }
+  [for=burger] {
+    display: block;
+    font-size: 6vw;
+    color: white;
+    background-color: rgba($color: #666, $alpha: 0.5);
+  }
+  [for=burger]::before {
+    content: "\2630";
+  }
+  .navbar {
+    display: none;
+  }
+  #burger:checked + label + .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar li {
+    width: 118px;
+    background-color: rgba($color: #666, $alpha: 0.5);
+  }
+  .navbar li:hover {
+    background-color: rgba($color: darkred, $alpha: 0.5)
+  }
+  #burger:checked + [for=burger]::before {
+    content: "✕";
+    font-size: 5vw;
+    padding-left: 1vw;
+  }
+}
