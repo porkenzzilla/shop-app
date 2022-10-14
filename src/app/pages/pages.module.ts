@@ -8,12 +8,14 @@ import { HeaderComponent } from './header/header.component';
 import {SharedModule} from "../shared/shared.module";
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from "@angular/material/icon";
+import { NewFeatureComponent } from './new-feature/new-feature.component';
 
 @NgModule({
   declarations: [
     ListOfProductsComponent,
     CartComponent,
-    HeaderComponent
+    HeaderComponent,
+    NewFeatureComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import {MatIconModule} from "@angular/material/icon";
     MatIconModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    NewFeatureComponent
   ],
   providers: [
     {provide: MatSnackBar}
